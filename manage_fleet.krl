@@ -35,8 +35,8 @@ Multiple picos part 1
       name = "Vehicle-" + ent:wtf.as(str);
       attributes = {}
                     .put(["Prototype_rids"],"b507782x4.dev;b507782x2.dev;b507782x3.dev") 
-                    .put(["name"], name) // name for child
-                    .put(["parent_eci"],"FD4F3324-0131-11E6-960F-04C5E71C24E1")
+                    .put(["name"], name) 
+                    .put(["parent_eci"],"C098478E-0507-11E6-BD6B-81ADE71C24E1")
                     ;
 
     }
@@ -69,10 +69,6 @@ Multiple picos part 1
                     with attrs = attributes.klog("del attributes: ");
                 event:send({"cid":meta:eci()}, "wrangler", "subscription_removal")
                     with attrs = bc_attributes.klog("bc_attributes: ");
-            }
-
-            always {
-                log "can't delete an empty eci: " + eci;
             }
     }
 
