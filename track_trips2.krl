@@ -30,6 +30,9 @@ ruleset track_trips2 {
     noop();
     fired{
       raise explicit event found_long_trip if (mileage > long_trip)
+      always{
+        log ("fired ent found_long_trip");
+      }
     }
   }
   rule found_long_trip {
